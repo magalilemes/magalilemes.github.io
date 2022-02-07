@@ -41,7 +41,7 @@ params:
         emoji: 🌻
         subtitle: hi
         avatar:
-            enabled: true
+            enabled: false
             local: true
             src: img/avatar.png
 
@@ -208,7 +208,7 @@ markup:
             ## Set to true if you have HTML content inside Markdown
             unsafe: false
     tableOfContents:
-        endLevel: 4
+        endLevel: 1
         ordered: true
         startLevel: 2
     highlight:
@@ -216,6 +216,6 @@ markup:
         codeFences: true
         guessSyntax: true
         lineNoStart: 1
-        lineNos: true
+        lineNos: false
         lineNumbersInTable: true
         tabWidth: 4
