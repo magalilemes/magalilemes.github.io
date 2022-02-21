@@ -54,4 +54,65 @@ contribution to the Linux kernel &lt;a class="link" href="https://lore.kernel.or
 >https://01.org/lkp/documentation/0-day-test-service&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
+&lt;/section></description></item><item><title>cd ~/linux</title><link>https://magalilemes.github.io/posts/cd-linux/</link><pubDate>Mon, 21 Feb 2022 00:00:00 -0300</pubDate><guid>https://magalilemes.github.io/posts/cd-linux/</guid><description>&lt;p>During this year, I will be contributing to the Linux kernel. More specifically,
+I&amp;rsquo;ll add more tests to the AMD graphics driver DML library using the KUnit
+framework.&lt;/p>
+&lt;h2 id="amd-graphics-driver-in-the-linux-kernel">AMD Graphics Driver in the Linux Kernel&lt;/h2>
+&lt;p>AMD graphics drivers live under the &lt;code>drivers/gpu/drm/amd&lt;/code> directory in the Linux
+kernel code. DRM stands for Direct Rendering Manager, and its folder intends to
+provide an interface for interacting with GPUs. Inside DRM, we can find the AMD
+directory, supporting AMD graphic cards.&lt;/p>
+&lt;h2 id="display">Display&lt;/h2>
+&lt;p>AMD display driver has essentially two pieces: Display Core (DC) and Display
+Manager (DM)&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. The first one is OS-agnostic and handles hardware programming
+and resource management. The second one, though, is OS-dependent and has
+implementations of amdgpu base driver and DRM.&lt;/p>
+&lt;h2 id="display-mode-library-dml">Display Mode Library (DML)&lt;/h2>
+&lt;p>In &lt;code>drivers/gpu/drm/amd/display/dc/dml&lt;/code>, we find the Display Mode Library, which
+&amp;ldquo;handles clock, watermark, and bandwidth calculation for
+&lt;a class="link" href="https://www.kernel.org/doc/html/latest/gpu/amdgpu/display/dcn-overview.html" target="_blank" rel="noopener"
+>DCN&lt;/a>&amp;quot;&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>.
+This is a mathematical library that AMD graphic drivers use. In its
+&lt;a class="link" href="https://gitlab.freedesktop.org/agd5f/linux/-/blob/amd-staging-drm-next/drivers/gpu/drm/amd/display/dc/dml/Makefile" target="_blank" rel="noopener"
+>Makefile&lt;/a>,
+it is also described as a &amp;ldquo;&amp;lsquo;utils&amp;rsquo; sub-component of DAL. It provides the general
+basic services required by other DAL subcomponents.&amp;rdquo;&lt;/p>
+&lt;h2 id="kunit">KUnit&lt;/h2>
+&lt;p>One way to ensure that things are working the way they are supposed to is
+through testing. Naturally, that also applies to software applications, and when
+it comes to the Linux kernel, it couldn&amp;rsquo;t be different&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>: kselftest and KUnit
+are two tools used to write tests, each serving a different purpose.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>kselftest&lt;/strong> uses scripts and programs to test features in the userspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KUnit&lt;/strong> is a framework that provides unit testing, which is the process of
+testing small components of code. This allows developers to test the behavior of
+pieces of code inside the kernel source code, instead of testing an entire
+feature.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="capstone-project">Capstone Project&lt;/h2>
+&lt;p>Due to DML&amp;rsquo;s mathematical nature, introducing unit testing to this library is a
+reasonable idea, and KUnit seems like a perfect fit for this purpose. As part of
+my university capstone project, I&amp;rsquo;ll investigate how some functions in DML work,
+add unit tests, refactor these functions and possibly make them robust and
+well-structured.&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;a class="link" href="https://www.kernel.org/doc/html/latest/gpu/amdgpu/display/index.html" target="_blank" rel="noopener"
+>https://www.kernel.org/doc/html/latest/gpu/amdgpu/display/index.html&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>&lt;a class="link" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=061bfa06a42a9f6cd192bae61a4bf0e746eccb39" target="_blank" rel="noopener"
+>https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=061bfa06a42a9f6cd192bae61a4bf0e746eccb39&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3" role="doc-endnote">
+&lt;p>&lt;a class="link" href="https://www.kernel.org/doc/html/latest/dev-tools/testing-overview.html" target="_blank" rel="noopener"
+>https://www.kernel.org/doc/html/latest/dev-tools/testing-overview.html&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
 &lt;/section></description></item></channel></rss>
