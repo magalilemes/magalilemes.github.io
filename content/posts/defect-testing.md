@@ -33,14 +33,14 @@ To get a grasp of what was accomplished, it could be desirable to clone the
 repository and play around a bit.
 
 ```bash
-git clone --branch for-amd https://gitlab.freedesktop.org/isinyaaa/linux.git
+git clone --branch blog-post-03 https://github.com/magalilemes/linux.git
 ```
 
 At the moment of writing this post, the commit that introduces the test case is
-`3013c453`. For reproducibility, run:
+`04496a07`. For reproducibility, run:
 
 ```bash
-git checkout 3013c453
+git checkout 04496a07
 ```
 
 Run the command below to run all KUnit's AMDGPU tests, they are all expected to
