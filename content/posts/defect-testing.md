@@ -36,11 +36,10 @@ repository and play around a bit.
 git clone --branch blog-post-03 https://github.com/magalilemes/linux.git
 ```
 
-At the moment of writing this post, the commit that introduces the test case is
-`04496a07`. For reproducibility, run:
+Then navigate into the directory:
 
 ```bash
-git checkout 04496a07
+cd linux
 ```
 
 Run the command below to run all KUnit's AMDGPU tests, they are all expected to
