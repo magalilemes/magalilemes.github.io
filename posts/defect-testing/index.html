@@ -17,8 +17,7 @@ Then comes commit <code>9ad5d02c</code> tackling the two previous issues: the st
 longer exceeds the specified limit, and <code>dcn21_update_bw_bounding_box</code> now
 presents the same behavior as it did before <code>8861c27a</code>.</p><h1 id=setup-and-playing-a-bit>Setup and playing a bit</h1><p>To get a grasp of what was accomplished, it could be desirable to clone the
 repository and play around a bit.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone --branch blog-post-03 https://github.com/magalilemes/linux.git
-</span></span></code></pre></div><p>At the moment of writing this post, the commit that introduces the test case is
-<code>04496a07</code>. For reproducibility, run:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git checkout 04496a07
+</span></span></code></pre></div><p>Then navigate into the directory:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> linux
 </span></span></code></pre></div><p>Run the command below to run all KUnit&rsquo;s AMDGPU tests, they are all expected to
 run successfully:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>./tools/testing/kunit/kunit.py run --arch<span class=o>=</span>x86_64 --kunitconfig<span class=o>=</span>drivers/gpu/drm/amd/display/tests
 </span></span></code></pre></div><p>Roll back <code>drivers/gpu/drm/amd/display/dc/dml/dcn20/dcn20_fpu.c</code> to the commit

@@ -22,9 +22,8 @@ presents the same behavior as it did before &lt;code>8861c27a&lt;/code>.&lt;/p>
 &lt;p>To get a grasp of what was accomplished, it could be desirable to clone the
 repository and play around a bit.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone --branch blog-post-03 https://github.com/magalilemes/linux.git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>At the moment of writing this post, the commit that introduces the test case is
-&lt;code>04496a07&lt;/code>. For reproducibility, run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git checkout 04496a07
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then navigate into the directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> linux
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the command below to run all KUnit&amp;rsquo;s AMDGPU tests, they are all expected to
 run successfully:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">./tools/testing/kunit/kunit.py run --arch&lt;span class="o">=&lt;/span>x86_64 --kunitconfig&lt;span class="o">=&lt;/span>drivers/gpu/drm/amd/display/tests
