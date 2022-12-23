@@ -190,7 +190,7 @@ menu:
               icon: brand-gitlab
         - identifier: linkedin
           name: LinkedIn
-          url: https://linkedin.com/magalilemes
+          url: https://linkedin.com/in/magalilemes
           params:
               icon: brand-linkedin
 
