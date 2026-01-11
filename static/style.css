@@ -1,0 +1,584 @@
+body {
+    background-color: #f6f0ed;
+    font-family: "Source Sans 3", sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    flex: 1 0 auto;
+}
+
+code {
+    font-size: 13px;
+}
+
+.container {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.title {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.divider {
+    height: 2px;
+    background-color: #f5e3d9;
+    border: 0;
+    opacity: 0.6;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: "Source Serif 4", serif;
+}
+
+.site-title {
+    margin: 25px auto 10px auto;
+    text-align: center;
+}
+
+#menu {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#menu li {
+    display: inline;
+    font-size: 15px;
+}
+
+#menu ul li a {
+    display: inline-block;
+    padding: 5px 15px;
+    color: #474A48;
+    text-decoration: none;
+}
+
+#menu ul li a.active span {
+    border-bottom: 2px solid #edaa9d;
+}
+
+#menu ul li a:hover {
+    background-color: #edaa9d;
+}
+
+/* Dropdown Language Selector */
+.dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+.dropbtn {
+    padding: 8px;
+    width: 30px;
+    background-color: #edaa9d;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f5a982;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 30px;
+    padding: 8px;
+    background-color: #dedbd9;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+footer {
+    color: #6e6e6e;
+    padding: 15px 0;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #f5e3d9;
+    flex-shrink: 0;
+}
+
+footer a {
+    color: #552e1b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    border-bottom: 2px solid #edaa9d;
+}
+
+/* List of posts */
+.posts ul {
+    padding: 0;
+}
+
+.posts li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.homepage-posts {
+    background-color: #f5e3d9;
+    padding: 10px;
+}
+
+.post-date {
+    color: #5e5e5e;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.tags {
+    display: inline-block;
+}
+
+.tags a {
+    color: #a4543a;
+    text-decoration: none;
+}
+
+.tags a:hover {
+    background-color: #f5d5c4;
+}
+
+.post-title {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.post-title a:hover {
+    font-weight: bold;
+}
+
+.post-title a:visited {
+    color: #666;
+    font-weight: 400;
+}
+
+.tag {
+    padding: 0 8px;
+    margin-right: 5px;
+    background-color: #f7ebe5;
+    border: 1px solid #f5d5c4;
+    border-radius: 10px;
+}
+
+.blog-link {
+    padding-top: 20px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.pagination a,
+.blog-link a {
+    color: #552e1b;
+    text-decoration: none;
+}
+
+.blog-link a:hover,
+.pagination a:hover {
+    border-bottom: 2px solid #edaa9d;
+}
+
+.pagination {
+    text-align: center;
+}
+
+/* Individual post */
+
+.post-content {
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.post-content h1 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    border-bottom: 1px solid #f1d7c9;
+}
+
+.post-content h2 {
+    font-size: 1.5rem;
+}
+
+.post-content h3 {
+    font-size: 1.25rem;
+}
+
+.post-content a {
+    color: #a4543a;
+    border-bottom: 1px solid #edaa9d;
+    text-decoration: none;
+}
+
+.post-content a:hover {
+    color: #c06b4e;
+    border-bottom-color: #c06b4e;
+}
+
+.post-content a:visited {
+    color: #7a5a4f;
+    border-bottom-color: #e4c3b6;
+}
+
+.table-of-contents {
+    margin-top: 20px;
+    padding-left: 10px;
+    background-color: #fbf2ee;
+    border: 1px solid #f1d7c9;
+    border-radius: 4px;
+}
+
+.table-of-contents h2 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+.table-of-contents a {
+    color: #a4543a;
+    text-decoration: none;
+}
+
+.table-of-contents ol {
+    margin: 0;
+    padding: 5px;
+    counter-reset: item;
+}
+
+.table-of-contents li {
+    display: block;
+    margin: 8px;
+}
+
+.table-of-contents li:before {
+    content: counters(item, ".") ".";
+    counter-increment: item;
+}
+
+.footnote-reference a {
+    border-bottom: none;
+    margin-left: 3px;
+}
+
+
+.footnote-definition {
+    margin: 24px auto;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+.footnote-definition-label {
+    flex-shrink: 0;
+    font-size: 13px;
+    color: #a4543a;
+}
+
+.footnote-definition p {
+    margin: 0;
+}
+
+.footnote-definition a {
+    color: #552e1b;
+    text-decoration: none;
+}
+
+.footnote-definition a:hover {
+    border-bottom: 1px solid #edaa9d;
+}
+
+.footnote-definition:first-of-type {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #f5e3d9;
+}
+
+/* Code blocks */
+pre {
+    padding: 1rem;
+    overflow: auto;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+pre[data-linenos] {
+    padding: 1rem 0;
+}
+
+pre table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+pre table td {
+    padding: 0;
+}
+
+pre table td:nth-of-type(1) {
+    text-align: center;
+    vertical-align: top;
+    user-select: none;
+}
+
+pre mark {
+    display: block;
+    background-color: #fefce8;
+}
+
+/* About */
+.introduction {
+    text-align: center;
+}
+
+.introduction h1 {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.contact {
+    text-align: center;
+}
+div.email > span:nth-child(2) {
+	display: none;
+}
+
+.education {
+    padding-bottom: 16px;
+}
+
+.experience {
+    margin: auto;
+    padding: 10px;
+    background-color: #f5e3d9;
+}
+
+#about a {
+  color: #a4543a;
+  border-bottom: 1px solid #edaa9d;
+  text-decoration: none;
+}
+
+#about a:visited {
+    color: #7a5a4f;
+    border-bottom-color: #e4c3b6;
+}
+
+#about h2 {
+    margin-bottom: 10px;
+}
+
+.experience a:hover, #about a:visited:hover {
+  color: #c06b4e;
+  border-bottom-color: #c06b4e;
+}
+
+.lang-note {
+  font-size: 0.85em;
+  color: #777;
+  margin-left: 6px;
+}
+
+.skills p {
+  margin: 6px 0;
+}
+
+.skills strong {
+  color: #552e1b;
+}
+
+.role {
+    float: left;
+    width: 50%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.period {
+    float: left;
+    width: 50%;
+    font-size: 18px;
+    color: #6e6e6e;
+    text-align: right;
+}
+
+/* List of tags */
+.tags-page {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tags-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-pill {
+    padding: 6px 12px;
+    background-color: #f6e6da;
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background 0.2s;
+}
+
+.tag-pill:hover {
+    background-color: #f0d4c3;
+}
+
+.tag-count {
+    margin-left: 6px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.tag-subtitle {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #5e5e5e;
+}
+
+.tag-posts {
+    padding: 0;
+}
+
+.tag-posts li {
+    list-style: none;
+    margin-bottom: 12px;
+    padding: 12px;
+    background-color: #f5e3d9;
+}
+
+
+/* Small screens */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .site-title {
+        margin: 15px auto 8px auto;
+        font-size: 1.3rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .introduction h1 {
+        font-size: 1.1rem;
+    }
+
+    .post-title {
+        font-size: 15px;
+    }
+
+    #menu li {
+        display: inline;
+        font-size: 14px;
+    }
+
+    #menu ul li a {
+        display: inline-block;
+        padding: 5px 10px;
+        border: none;
+    }
+
+    .post-content {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .post-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .post-content h3 {
+        font-size: 1rem;
+    }
+
+    pre {
+        padding: 0.5rem;
+        font-size: 11px;
+        margin: 8px -10px;
+        border-radius: 0;
+    }
+
+    code {
+        font-size: 11px;
+    }
+
+    .table-of-contents {
+        margin: 10px -10px;
+        padding: 10px;
+    }
+
+    .table-of-contents h2 {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .blog-link {
+        font-size: 16px;
+        padding-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .role, .period {
+        width: 100%;
+        text-align: left;
+    }
+}

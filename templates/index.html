@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if lang == "pt" %}
+  {% set blog = get_section(path="blog/_index.pt.md") %}
+{% else %}
+  {% set blog = get_section(path="blog/_index.md") %}
+{% endif %}
+
+<div id="content">
+  <div class="introduction">
+    <h1 class="title">{{ trans(key="hi", lang=lang) }}</h1>
+    {% if lang == "pt" %}
+      <p>Meu nome é Magali. Sou uma desenvolvedora de software interessada em Linux, programação de sistemas e software de baixo nível.</p>
+    {% else %}
+      <p>My name is Magali. I'm a software developer from Brazil interested in Linux, systems programming, and low-level software.</p>
+    {% endif %}
+  </div>
+  <div class="posts">
+    <hr class="divider">
+    <h1 class="title">{{ trans(key="recent_posts", lang=lang) }}</h1>
+    <ul>
+      {% for page in blog.pages | slice(end=3) %}
+      <li class="homepage-posts">
+        <div class="post-date">
+          {% if lang == "pt" %}
+              {{ page.date | date(format="%d/%m/%Y") }}
+          {% else %}
+              {{ page.date | date(format="%B %d, %Y") }}
+          {% endif %}
+        </div>
+        <div class="post-title">
+          <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        </div>
+      </li>
+      {% endfor %}
+      <div class="blog-link">
+        <a href={{ base }}/blog>{{ trans(key="see_all_posts", lang=lang) }}</a>
+      </div>
+    </ul>
+  <hr class="divider">
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+
+  <h1 class="title">#{{ term.name }}</h1>
+  <p class="tag-subtitle">
+    {{ term.pages | length }} {% if term.pages | length > 1 %}posts{% else %}post{% endif %}
+  </p>
+
+  <ul class="tag-posts">
+    {% for page in term.pages %}
+      <li class="homepage-posts">
+        <div class="post-date">
+          {% if lang == "pt" %}
+            {{ page.date | date(format="%d/%m/%Y") }}
+          {% else %}
+            {{ page.date | date(format="%B %d, %Y") }}
+          {% endif %}
+        </div>
+        <div class="post-title">
+          <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
+{% endblock content %}

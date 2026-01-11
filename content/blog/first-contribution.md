@@ -1,13 +1,11 @@
----
-title: "My first contribution to the Linux kernel"
-date: 2022-02-21T00:01:00-03:00
-draft: false
-description: "From scratch to sending the patch."
-tags: [
-    "contributions",
-    "linux",
-]
----
++++
+title = "My first contribution to the Linux kernel"
+date= 2022-02-21
+description = "From scratch to sending the patch."
+
+[taxonomies]
+tags = ["linux"]
++++
 
 ## Finding something to fix
 

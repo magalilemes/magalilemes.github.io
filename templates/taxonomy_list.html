@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="tags-page">
+
+  <h1 class="title">Tags</h1>
+
+  <div class="tags-grid">
+    {% for term in terms %}
+      <a class="tag-pill" href="{{ term.permalink | safe }}">
+        {{ term.name }}
+        <span class="tag-count">{{ term.pages | length }}</span>
+      </a>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock content %}

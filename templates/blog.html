@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="content">
+  <div class="posts">
+    <h1 class="title">Posts</h1>
+    <ul>
+      {% for page in paginator.pages %}
+        <li>
+            <div class="post-date">
+              {% if lang == "pt" %}
+                  {{ page.date | date(format="%d/%m/%Y") }}
+              {% else %}
+                  {{ page.date | date(format="%B %d, %Y") }}
+              {% endif %}
+            </div>
+            <div class="tags">
+              {% for tag in page.taxonomies.tags | slice(end=3) %}
+                <a class="tag" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+              {% endfor %}
+            </div>
+            <div class="post-title">
+              <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+            </div>
+            <hr class="divider">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <nav class="pagination">
+    {% if paginator.previous %}
+      <a href="{{ paginator.previous | safe }}">{{ trans(key="previous", lang=lang) }}</a>
+    {% endif %}
+    {% if paginator.next %}
+      <a href="{{ paginator.next | safe }}">{{ trans(key="next", lang=lang) }}</a>
+    {% endif %}
+  </nav>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+# The URL the site will be built for
+base_url = "https://magalilemes.github.io"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+taxonomies = [
+  { name = "tags", paginate_by = 5, feed = true }
+]
+default_language = "en" 
+
+[extra]
+# Put all your custom variables here
+
+[translations]
+home = "Home"
+about = "About"
+source = "Source"
+built_with = "Built with Zola"
+table_of_contents = "Table of contents"
+back_to_blog = "← Back to blog"
+hi = "Hi!"
+recent_posts = "Recent posts"
+see_all_posts = "See all posts →"
+previous = "Previous"
+next = "Next"
+
+[languages.pt]
+taxonomies = [
+    { name = "tags", paginate_by = 5, feed = true },
+]
+
+[languages.pt.translations]
+home = "Início"
+about = "Sobre"
+source = "Fonte"
+built_with = "Feito com Zola"
+table_of_contents = "Índice"
+back_to_blog = "← Voltar para o blog"
+hi = "Olá!"
+recent_posts = "Posts recentes"
+see_all_posts = "Ver todos os posts →"
+previous = "Anterior"
+next = "Próximo"

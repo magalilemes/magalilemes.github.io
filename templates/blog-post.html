@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="title">
+  {{ page.title }}
+</h1>
+
+<div id="content">
+  <p class="subtitle">
+      {% if lang == "pt" %}
+        {{ page.date | date(format="%d/%m/%Y") }}
+      {% else %}
+        {{ page.date | date(format="%B %d, %Y") }}
+      {% endif %}
+  </p>
+
+  <div class="tags">
+  {% for tag in page.taxonomies.tags %}
+    <a class="tag" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+  {% endfor %}
+  </div>
+
+  <div class="table-of-contents">
+    <h2>{{ trans(key="table_of_contents", lang=lang) }}</h2>
+
+    {% if page.toc %}
+        <ol>
+          {% for h1 in page.toc %}
+            <li>
+                <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                {% if h1.children %}
+                  <ol>
+                    {% for h2 in h1.children %}
+                      <li>
+                          <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ol>
+                {% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+    {% endif %}
+  </div>
+
+    <div class="post-content">
+      {{ page.content | safe }}
+    </div>
+
+    <div class="blog-link">
+      <a href="/blog">{{ trans(key="back_to_blog", lang=lang) }}</a>
+    </div>
+</div>
+
+{% endblock content %}

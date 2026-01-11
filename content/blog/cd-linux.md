@@ -1,28 +1,31 @@
----
-title: "cd ~/linux"
-date: 2022-02-21T00:00:00-03:00
-draft: false
-description: Working directory is now the Linux kernel.
----
++++
+title = "cd ~/linux"
+date = "2022-02-21"
+description = "Working directory is now the Linux kernel."
+
+[taxonomies]
+tags = ["linux"]
++++
+
 During this year, I will be contributing to the Linux kernel. More specifically,
 I'll add more tests to the AMD graphics driver DML library using the KUnit
 framework.
 
-## AMD Graphics Driver in the Linux Kernel
+# AMD Graphics Driver in the Linux Kernel
 
 AMD graphics drivers live under the `drivers/gpu/drm/amd` directory in the Linux
 kernel code. DRM stands for Direct Rendering Manager, and its folder intends to
 provide an interface for interacting with GPUs. Inside DRM, we can find the AMD
 directory, supporting AMD graphic cards.
 
-## Display
+# Display
 
 AMD display driver has essentially two pieces: Display Core (DC) and Display
 Manager (DM)[^1]. The first one is OS-agnostic and handles hardware programming
 and resource management. The second one, though, is OS-dependent and has
 implementations of amdgpu base driver and DRM.
 
-## Display Mode Library (DML)
+# Display Mode Library (DML)
 
 In `drivers/gpu/drm/amd/display/dc/dml`, we find the Display Mode Library, which
 "handles clock, watermark, and bandwidth calculation for
@@ -32,7 +35,7 @@ This is a mathematical library that AMD graphic drivers use. In its
 it is also described as a "'utils' sub-component of DAL. It provides the general
 basic services required by other DAL subcomponents."
 
-## KUnit
+# KUnit
 
 One way to ensure that things are working the way they are supposed to is
 through testing. Naturally, that also applies to software applications, and when
@@ -46,7 +49,7 @@ testing small components of code. This allows developers to test the behavior of
 pieces of code inside the kernel source code, instead of testing an entire
 feature.
 
-## Capstone Project
+# Capstone Project
 Due to DML's mathematical nature, introducing unit testing to this library is a
 reasonable idea, and KUnit seems like a perfect fit for this purpose. As part of
 my university capstone project, I'll investigate how some functions in DML work,

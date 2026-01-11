@@ -1,0 +1,60 @@
+{% set current_lang = lang | upper %}
+{% if lang == "pt" %}
+  {% set base = "/pt" %}
+  {% set other_lang = "EN" %}
+  {% set other_link = "/" %}
+{% else %}
+  {% set base = "" %}
+  {% set other_lang = "PT" %}
+  {% set other_link = "/pt/" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Magali Lemes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="https://freesvg.org/img/princesspenguin.png">
+  <body>
+  <section class="section">
+    <div class="container">
+      <div id="preamble">
+        <div class="header">
+          <h1 class="site-title">Magali Lemes</h1>
+          <div class="dropdown">
+            <div class="dropbtn">{{ current_lang }}</div>
+            <div class="dropdown-content">
+              <a href="{{ other_link }}">{{ other_lang }}</a>
+            </div>
+          </div>
+        </div>
+          <div id="menu">
+            <ul>
+              <li>
+                <a href="{{ base }}/" class="{% if current_path | safe == base ~ "/" %}active{% endif %}">
+                  <span>{{ trans(key="home", lang=lang) }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ base }}/about" class="{% if current_path | safe == base ~ "/about/" %}active{% endif %}">
+                  <span>{{ trans(key="about", lang=lang) }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </div>
+      {% block content %} {% endblock content %}
+    </div>
+  </section>
+  <footer>
+    <div>© 2026 Magali Lemes</div>
+    {{ trans(key="built_with", lang=lang) }} • <a href="https://github.com/magalilemes/magalilemes.github.io">{{ trans(key="source", lang=lang) }}</a>
+  </footer>
+</body>
+</html>

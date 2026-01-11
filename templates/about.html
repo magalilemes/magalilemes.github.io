@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="content">
+  <div id="about">
+
+    <div class="introduction">
+      <h1 class="title">About me</h1>
+        <p>My name is Magali. I'm a software developer from Brazil interested in Linux, systems programming, and low-level software.</p>
+    </div>
+    <div class="contact">
+      <a href="https://www.linkedin.com/in/magalilemes" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/magalilemes" target="_blank" rel="noopener">GitHub</a> ·
+      <span class="email">magalilemes00@<span>gmail.</span>com</span>
+    </div>
+    <hr class="divider">
+    <h2>Experience</h2>
+    <div class="experience">
+      <div class="role">Software Engineer</div>
+      <div class="period">Feb 2023 - Present</div>
+      <div>Canonical</div>
+    </div>
+    <div>
+      <ul>
+        <li>Maintain and release Ubuntu Linux kernels for AWS and FIPS-compliant environments.</li>
+        <li>Backport security patches (CVEs), bug fixes, and features to downstream Ubuntu kernel releases.</li>
+        <li>Debug and resolve user-reported Linux kernel issues.</li>
+        <li>Analyze test results, identify regressions, and drive fixes prior to release of new kernel versions.</li>
+        <li>Package and manage multiple kernel variants (IoT, cloud, FIPS) using Debian and Snap packaging systems.</li>
+        <li>Contribute patches to upstream mainline and stable Linux kernel <a href="https://lore.kernel.org/all/?q=magali.lemes%40canonical.com" target="_blank" rel="noopener">(lore.kernel.org submissions)</a>.</li>
+        <li>Develop and improve internal tooling using Python and Bash.</li>
+        <li>Review kernel patches backports and tooling changes.</li>
+        <li>Mentor teammates through code reviews, knowledge sharing, and technical guidance.</li>
+      </ul>
+    </div>
+
+    <div class="experience">
+      <div class="role">Intern</div>
+      <div class="period">May 2021 - July 2021</div>
+      <div>Google Summer of Code - Linux Foundation</div>
+    </div>
+    <ul>
+      <li>Contributed to <a href="https://kworkflow.org/" target="_blank" rel="noopener">kworkflow</a>, a Bash-based tool that streamlines daily tasks of Linux kernel developers.</li>
+      <li>Implemented new features, added tests, fixed long-standing bugs, and performed code reviews.</li>
+      <li>
+        Final report:
+        <a href="https://gist.github.com/magalilemes/d076a87c2e87395aafc1b68f2551b2da" target="_blank" rel="noopener">
+          kworkflow - GSoC 2021
+        </a>
+      </li>
+    </ul>
+
+    <div class="experience">
+      <div class="role">Intern</div>
+      <div class="period">Dec 2020 - Feb 2021</div>
+      <div>Outreachy</div>
+    </div>
+    <ul>
+      <li>Worked on GNU Guix, a GNU/Linux distribution and package manager written in Guile Scheme.</li>
+      <li>Implemented a new subcommand to display the Git history of all packages.</li>
+      <li>
+        Related posts:
+        <a href="/tags/outreachy/">Outreachy internship articles</a>
+      </li>
+    </ul>
+
+    <hr class="divider">
+
+    <div class="education">
+      <h2>Education</h2>
+      <div>
+        <div class="role">Bachelor in Computer Science</div>
+        <div class="period">2019 - 2022</div>
+        <div>University of São Paulo (USP), São Paulo, Brazil</div>
+        <strong>Capstone project</strong>:
+        <a href="https://linux.ime.usp.br/~magali/mac0499/" target="_blank" rel="noopener">
+          <em>Implementing unit testing in the Linux kernel — A participant observation in the AMD display driver</em>
+        </a>
+        <span class="lang-note">(project website in Portuguese)</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <p><strong>Programming:</strong> C · Python · Bash</p>
+      <p><strong>Languages:</strong> Portuguese (native) · English (fluent) · Mandarin Chinese (HSK 3)</p>
+    </div>
+
+  </div>
+</div>
+
+{% endblock content %}

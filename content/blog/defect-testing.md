@@ -1,9 +1,12 @@
----
-title: "Train of thought writing test cases for Linux kernel's AMDGPU with KUnit"
-date: 2022-08-08T00:00:00-03:00
-draft: false
-description: All aboard 
----
++++
+title = "Train of thought writing test cases for Linux kernel's AMDGPU with KUnit"
+date = 2022-08-08
+description = "All aboard" 
+
+[taxonomies]
+tags = ["linux"]
++++
+
 There are many ways to approach writing test cases, one of them being writing
 test cases that cover discovered bugs. In this post, I'll walk through my train
 of thoughts into writing one test case for a bug in the Linux kernel's AMDGPU
@@ -234,9 +237,9 @@ dcn2_1_soc.clock_limits[3].dispclk = 847.06;
 dcn2_1_soc.clock_limits[4].dispclk = 900.00;
 ```
 
-**Now after invoking `dcn21_update_bw_bounding_box`, what happens with the
+Now after invoking `dcn21_update_bw_bounding_box`, what happens with the
 values of `dcn2_1_soc.clock_limits[k].dispclk` for k = 3, closest_clk_lvl = 2;
-and for k = 4, closest_clk_lvl = 3?**
+and for k = 4, closest_clk_lvl = 3?
 
 * Previous version (8861c27a^): * `clock_limits[3].dispclk_mhz` is set to
 	`dcn2_1_soc.clock_limits[2].dispclk_mhz`; * then
@@ -345,5 +348,4 @@ it the right one, though?) to obtain the expected values is running the function
 when it is in its correct state, and seeing what was yielded. Finally, one test
 case is ready: it is now time to think about other ways to write others.
 
-[^1]: [drm/amd/display - Display Core
-    (DC)](https://www.kernel.org/doc/html/latest/gpu/amdgpu/display/index.html)
+[^1]: [drm/amd/display - Display Core(DC)](https://www.kernel.org/doc/html/latest/gpu/amdgpu/display/index.html)

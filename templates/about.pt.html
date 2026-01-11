@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="content">
+  <div id="about">
+
+    <div class="introduction">
+      <h1 class="title">Sobre mim</h1>
+        <p>Meu nome é Magali. Sou uma desenvolvedora de software interessada em Linux, programação de sistemas e software de baixo nível.</p>
+    </div>
+
+    <div class="contact">
+      <a href="https://www.linkedin.com/in/magalilemes">LinkedIn</a> ·
+      <a href="https://github.com/magalilemes">GitHub</a> ·
+      <span class="email">magalilemes00@<span>gmail.</span>com</span>
+    </div>
+    <hr class="divider">
+
+    <h2>Experiência</h2>
+
+    <div class="experience">
+      <div class="role">Engenheira de Software</div>
+      <div class="period">Fev 2023 - Presente</div>
+      <div>Canonical</div>
+    </div>
+    <div>
+      <ul>
+        <li>Mantenho e realizo lançamentos de kernels Linux para Ubuntu para AWS e compatíveis com FIPS.</li>
+        <li>Realizo backports de correções de segurança (CVEs), bugs e funcionalidades para versões downstream do kernel do Ubuntu.</li>
+        <li>Investigo e resolvo problemas reportados por usuários no kernel Linux.</li>
+        <li>Analiso resultados de testes, identifico regressões e implemento correções antes do lançamento de novas versões de kernels.</li>
+        <li>Empacoto e gerencio múltiplas variantes de kernel (IoT, nuvem, FIPS), utilizando os sistemas de empacotamento Debian e Snap.</li>
+        <li>Contribuo com patches para o kernel Linux mainline e stable <a href="https://lore.kernel.org/all/?q=magali.lemes%40canonical.com" target="_blank" rel="noopener">(submissões no lore.kernel.org)</a>.</li>
+        <li>Desenvolvo e aprimoro ferramentas internas utilizando Python e Bash.</li>
+        <li>Reviso backports de patches para o kernel e mudanças em ferramentas.</li>
+        <li>Mentoro colegas por meio de revisões de código, compartilhamento de conhecimento e orientação técnica.</li>
+      </ul>
+    </div>
+
+    <div class="experience">
+      <div class="role">Estagiária</div>
+      <div class="period">Mai 2021 - Jul 2021</div>
+      <div>Google Summer of Code - Linux Foundation</div>
+    </div>
+    <div>
+      <ul>
+        <li>Contribuí para o <a href="https://kworkflow.org/" target="_blank" rel="noopener">kworkflow</a>, uma ferramenta baseada em Bash que simplifica tarefas diárias de desenvolvedores do kernel Linux.</li>
+        <li>Implementei novas funcionalidades, escrevi testes, consertei bugs e revisei código de outros contribuidores.</li>
+        <li>
+          Relatório final:
+          <a href="https://gist.github.com/magalilemes/d076a87c2e87395aafc1b68f2551b2da" target="_blank" rel="noopener">
+            kworkflow - GSoC 2021
+          </a>
+          <span class="lang-note">(em inglês)</span>
+      </li>
+
+      </ul>
+    </div>
+
+    <div class="experience">
+      <div class="column role">Estagiária</div>
+      <div class="column period">Dez 2020 - Fev 2021</div>
+      <div>Outreachy</div>
+    </div>
+    <div>
+      <ul>
+        <li>Contribuí para Guix, um gerenciador de pacotes funcional e distribuição GNU/Linux</li>
+        <li>Implementei um novo subcomando para exibir o histórico Git de todos os pacotes, escrito em Guile Scheme</li>
+        <li>
+          Posts relacionados:
+          <a href="/pt/tags/outreachy/">Artigos do estágio Outreachy</a>
+        </li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <div class="education">
+        <h2>Educação</h2>
+        <div class="column role">Bacharelado em Ciência da Computação</div>
+        <div class="column period">2019 - 2022</div>
+        <div>Universidade de São Paulo (USP), São Paulo, Brasil</div>
+        <div><b>TCC</b>: <i>Implementando testes de unidade no kernel Linux - Uma observação participante no driver de display da AMD</i></div>
+    </div>
+
+    <hr class="divider">
+    <h2>Habilidades</h2>
+    <div>
+      <ul>
+        <li>Linguagens: C · Python · Bash</li>
+        <li>Idiomas: Português (nativo) · Inglês (fluente) · Chinês (HSK 3)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+{% endblock content %}
